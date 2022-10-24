@@ -1,0 +1,119 @@
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+html
+    font-size: 62.5%
+body 
+    font-family: 'Roboto', sans-serif
+    padding: 5rem
+    color: #fff
+.header
+    position: relative
+    background: linear-gradient(90deg, #121117, rgb(168 108 0 / 30%)), url(../img/background.png) center / cover no-repeat
+    height: 95vh
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%)
+    &__logo
+        width: 6rem
+        height: 6rem
+        position: absolute
+        top: 2rem
+        left: 2rem
+    &__title
+        position: absolute
+        top: 40%
+        left: 50%
+        transform: translate(-50%, -50%)
+        width: 100%
+        text-align: center
+.main-title
+    &__first
+        display: block
+        font-size: 5rem
+        margin-bottom: 1rem
+        animation-name: rightToLeft
+        animation-duration: 2s
+        animation-delay: 2s
+        animation-timing-function: ease
+        backface-visibility: hidden
+        animation-fill-mode: backwards
+    &__second
+        display: block
+        font-weight: 200
+        animation-name: leftToRight
+        animation-duration: 2s
+        animation-delay: 2s
+        animation-timing-function: ease
+        backface-visibility: hidden
+        margin-bottom: 2.5rem
+        animation-fill-mode: backwards
+        
+@keyframes rightToLeft
+    0%
+        opacity: 0
+        transform: translateX(200px)
+    50%
+        transform: translateX(-20px)
+    100%
+        opacity: 1
+        transform: translateX(0px)
+
+@keyframes leftToRight
+    0%
+        opacity: 0
+        transform: translateX(-200px)
+    50%
+        transform: translateX(20px)
+    100%
+        opacity: 1
+        transform: translateX(0px)
+.btn
+    &:link, &:visited
+        color: #000000
+        background: #fff
+        text-decoration: none
+        padding: 10px 30px
+        border-radius: 50px
+        display: inline-block
+        transition: all .3s
+        position: relative
+        font-size: 1.5rem
+    &:hover
+        transform: translateY(-4px)
+        background: #517909
+        &::after
+            opacity: 0
+            transform: scale(1.6)
+          
+    &:active
+        transform: translateY(4px)
+    &::after
+        content: ''
+        display: inline-block
+        width: 100%
+        height: 100%
+        background: #517909
+        position: absolute
+        top: 0
+        left: 0
+        z-index: -1
+        border-radius: 5rem
+        transition: all .2s
+    &_animation
+        animation-name: btnToUp
+        animation-duration: 2s
+        animation-delay: 4s
+        animation-fill-mode: backwards
+        animation-timing-function: ease
+        
+@keyframes btnToUp
+    0%
+        background: #fff
+        opacity: 0
+        transform: translateY(50px)
+    100%
+        background: #517909
+        opacity: 1
+        transform: translateX(0px)
+        
+
